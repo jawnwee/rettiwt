@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB55476C199D4FE90037F8DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB55476B199D4FE90037F8DB /* Foundation.framework */; };
+		EB55476E199D4FE90037F8DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB55476D199D4FE90037F8DB /* CoreGraphics.framework */; };
+		EB554770199D4FE90037F8DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB55476F199D4FE90037F8DB /* UIKit.framework */; };
+		EB554776199D4FE90037F8DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB554774199D4FE90037F8DB /* InfoPlist.strings */; };
+		EB554778199D4FE90037F8DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB554777199D4FE90037F8DB /* main.m */; };
+		EB55477C199D4FE90037F8DB /* JYLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB55477B199D4FE90037F8DB /* JYLAppDelegate.m */; };
+		EB55477E199D4FE90037F8DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB55477D199D4FE90037F8DB /* Images.xcassets */; };
+		EB554785199D4FE90037F8DB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB554784199D4FE90037F8DB /* XCTest.framework */; };
+		EB554786199D4FE90037F8DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB55476B199D4FE90037F8DB /* Foundation.framework */; };
+		EB554787199D4FE90037F8DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB55476F199D4FE90037F8DB /* UIKit.framework */; };
+		EB55478F199D4FE90037F8DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB55478D199D4FE90037F8DB /* InfoPlist.strings */; };
+		EB554791199D4FE90037F8DB /* RettiwtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB554790199D4FE90037F8DB /* RettiwtTests.m */; };
+		EB5547A4199D505E0037F8DB /* JYLErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547A1199D505E0037F8DB /* JYLErrorViewController.m */; };
+		EB5547A5199D505E0037F8DB /* JYLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547A3199D505E0037F8DB /* JYLLoginViewController.m */; };
+		EB5547AC199D50800037F8DB /* JYLFeedCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547A7199D50800037F8DB /* JYLFeedCollectionViewController.m */; };
+		EB5547AD199D50800037F8DB /* JYLMainRettiwtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547A9199D50800037F8DB /* JYLMainRettiwtViewController.m */; };
+		EB5547AE199D50800037F8DB /* JYLProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547AB199D50800037F8DB /* JYLProfileViewController.m */; };
+		EB5547B3199D508C0037F8DB /* JYLFeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547B0199D508C0037F8DB /* JYLFeedCollectionViewCell.m */; };
+		EB5547B4199D508C0037F8DB /* JYLFeedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547B2199D508C0037F8DB /* JYLFeedLayout.m */; };
+		EB5547B8199D50960037F8DB /* JYLRettiwtManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547B5199D50960037F8DB /* JYLRettiwtManagedStore.m */; };
+		EB5547B9199D50960037F8DB /* JYLRettiwtPost.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */; };
+		EB5547BC199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB5547BA199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB554788199D4FE90037F8DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB554760199D4FE90037F8DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB554767199D4FE90037F8DB;
+			remoteInfo = Rettiwt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB554768199D4FE90037F8DB /* Rettiwt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rettiwt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB55476B199D4FE90037F8DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB55476D199D4FE90037F8DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EB55476F199D4FE90037F8DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EB554773199D4FE90037F8DB /* Rettiwt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rettiwt-Info.plist"; sourceTree = "<group>"; };
+		EB554775199D4FE90037F8DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB554777199D4FE90037F8DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EB554779199D4FE90037F8DB /* Rettiwt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rettiwt-Prefix.pch"; sourceTree = "<group>"; };
+		EB55477A199D4FE90037F8DB /* JYLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYLAppDelegate.h; sourceTree = "<group>"; };
+		EB55477B199D4FE90037F8DB /* JYLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYLAppDelegate.m; sourceTree = "<group>"; };
+		EB55477D199D4FE90037F8DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB554783199D4FE90037F8DB /* RettiwtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RettiwtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB554784199D4FE90037F8DB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EB55478C199D4FE90037F8DB /* RettiwtTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RettiwtTests-Info.plist"; sourceTree = "<group>"; };
+		EB55478E199D4FE90037F8DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB554790199D4FE90037F8DB /* RettiwtTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RettiwtTests.m; sourceTree = "<group>"; };
+		EB5547A0199D505E0037F8DB /* JYLErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLErrorViewController.h; sourceTree = "<group>"; };
+		EB5547A1199D505E0037F8DB /* JYLErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLErrorViewController.m; sourceTree = "<group>"; };
+		EB5547A2199D505E0037F8DB /* JYLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLLoginViewController.h; sourceTree = "<group>"; };
+		EB5547A3199D505E0037F8DB /* JYLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLLoginViewController.m; sourceTree = "<group>"; };
+		EB5547A6199D50800037F8DB /* JYLFeedCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLFeedCollectionViewController.h; sourceTree = "<group>"; };
+		EB5547A7199D50800037F8DB /* JYLFeedCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLFeedCollectionViewController.m; sourceTree = "<group>"; };
+		EB5547A8199D50800037F8DB /* JYLMainRettiwtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLMainRettiwtViewController.h; sourceTree = "<group>"; };
+		EB5547A9199D50800037F8DB /* JYLMainRettiwtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLMainRettiwtViewController.m; sourceTree = "<group>"; };
+		EB5547AA199D50800037F8DB /* JYLProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLProfileViewController.h; sourceTree = "<group>"; };
+		EB5547AB199D50800037F8DB /* JYLProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLProfileViewController.m; sourceTree = "<group>"; };
+		EB5547AF199D508C0037F8DB /* JYLFeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLFeedCollectionViewCell.h; sourceTree = "<group>"; };
+		EB5547B0199D508C0037F8DB /* JYLFeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLFeedCollectionViewCell.m; sourceTree = "<group>"; };
+		EB5547B1199D508C0037F8DB /* JYLFeedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLFeedLayout.h; sourceTree = "<group>"; };
+		EB5547B2199D508C0037F8DB /* JYLFeedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLFeedLayout.m; sourceTree = "<group>"; };
+		EB5547B5199D50960037F8DB /* JYLRettiwtManagedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLRettiwtManagedStore.m; sourceTree = "<group>"; };
+		EB5547B6199D50960037F8DB /* JYLRettiwtPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLRettiwtPost.h; sourceTree = "<group>"; };
+		EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLRettiwtPost.m; sourceTree = "<group>"; };
+		EB5547BB199D509F0037F8DB /* JYLRettiwtModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYLRettiwtModel.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB554765199D4FE90037F8DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB55476E199D4FE90037F8DB /* CoreGraphics.framework in Frameworks */,
+				EB554770199D4FE90037F8DB /* UIKit.framework in Frameworks */,
+				EB55476C199D4FE90037F8DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB554780199D4FE90037F8DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB554785199D4FE90037F8DB /* XCTest.framework in Frameworks */,
+				EB554787199D4FE90037F8DB /* UIKit.framework in Frameworks */,
+				EB554786199D4FE90037F8DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB55475F199D4FE90037F8DB = {
+			isa = PBXGroup;
+			children = (
+				EB554771199D4FE90037F8DB /* Rettiwt */,
+				EB55478A199D4FE90037F8DB /* RettiwtTests */,
+				EB55476A199D4FE90037F8DB /* Frameworks */,
+				EB554769199D4FE90037F8DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB554769199D4FE90037F8DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB554768199D4FE90037F8DB /* Rettiwt.app */,
+				EB554783199D4FE90037F8DB /* RettiwtTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB55476A199D4FE90037F8DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB55476B199D4FE90037F8DB /* Foundation.framework */,
+				EB55476D199D4FE90037F8DB /* CoreGraphics.framework */,
+				EB55476F199D4FE90037F8DB /* UIKit.framework */,
+				EB554784199D4FE90037F8DB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB554771199D4FE90037F8DB /* Rettiwt */ = {
+			isa = PBXGroup;
+			children = (
+				EB5547BA199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld */,
+				EB55477A199D4FE90037F8DB /* JYLAppDelegate.h */,
+				EB55477B199D4FE90037F8DB /* JYLAppDelegate.m */,
+				EB55479A199D4FF80037F8DB /* Model */,
+				EB55479B199D4FFD0037F8DB /* View */,
+				EB55479C199D50000037F8DB /* Controller */,
+				EB55477D199D4FE90037F8DB /* Images.xcassets */,
+				EB554772199D4FE90037F8DB /* Supporting Files */,
+			);
+			path = Rettiwt;
+			sourceTree = "<group>";
+		};
+		EB554772199D4FE90037F8DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB554773199D4FE90037F8DB /* Rettiwt-Info.plist */,
+				EB554774199D4FE90037F8DB /* InfoPlist.strings */,
+				EB554777199D4FE90037F8DB /* main.m */,
+				EB554779199D4FE90037F8DB /* Rettiwt-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB55478A199D4FE90037F8DB /* RettiwtTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB554790199D4FE90037F8DB /* RettiwtTests.m */,
+				EB55478B199D4FE90037F8DB /* Supporting Files */,
+			);
+			path = RettiwtTests;
+			sourceTree = "<group>";
+		};
+		EB55478B199D4FE90037F8DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB55478C199D4FE90037F8DB /* RettiwtTests-Info.plist */,
+				EB55478D199D4FE90037F8DB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB55479A199D4FF80037F8DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB5547B5199D50960037F8DB /* JYLRettiwtManagedStore.m */,
+				EB5547B6199D50960037F8DB /* JYLRettiwtPost.h */,
+				EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EB55479B199D4FFD0037F8DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB5547AF199D508C0037F8DB /* JYLFeedCollectionViewCell.h */,
+				EB5547B0199D508C0037F8DB /* JYLFeedCollectionViewCell.m */,
+				EB5547B1199D508C0037F8DB /* JYLFeedLayout.h */,
+				EB5547B2199D508C0037F8DB /* JYLFeedLayout.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EB55479C199D50000037F8DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB5547A6199D50800037F8DB /* JYLFeedCollectionViewController.h */,
+				EB5547A7199D50800037F8DB /* JYLFeedCollectionViewController.m */,
+				EB5547A8199D50800037F8DB /* JYLMainRettiwtViewController.h */,
+				EB5547A9199D50800037F8DB /* JYLMainRettiwtViewController.m */,
+				EB5547AA199D50800037F8DB /* JYLProfileViewController.h */,
+				EB5547AB199D50800037F8DB /* JYLProfileViewController.m */,
+				EB5547A0199D505E0037F8DB /* JYLErrorViewController.h */,
+				EB5547A1199D505E0037F8DB /* JYLErrorViewController.m */,
+				EB5547A2199D505E0037F8DB /* JYLLoginViewController.h */,
+				EB5547A3199D505E0037F8DB /* JYLLoginViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB554767199D4FE90037F8DB /* Rettiwt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB554794199D4FE90037F8DB /* Build configuration list for PBXNativeTarget "Rettiwt" */;
+			buildPhases = (
+				EB554764199D4FE90037F8DB /* Sources */,
+				EB554765199D4FE90037F8DB /* Frameworks */,
+				EB554766199D4FE90037F8DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rettiwt;
+			productName = Rettiwt;
+			productReference = EB554768199D4FE90037F8DB /* Rettiwt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB554782199D4FE90037F8DB /* RettiwtTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB554797199D4FE90037F8DB /* Build configuration list for PBXNativeTarget "RettiwtTests" */;
+			buildPhases = (
+				EB55477F199D4FE90037F8DB /* Sources */,
+				EB554780199D4FE90037F8DB /* Frameworks */,
+				EB554781199D4FE90037F8DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB554789199D4FE90037F8DB /* PBXTargetDependency */,
+			);
+			name = RettiwtTests;
+			productName = RettiwtTests;
+			productReference = EB554783199D4FE90037F8DB /* RettiwtTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB554760199D4FE90037F8DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JYL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = johnjlee;
+				TargetAttributes = {
+					EB554782199D4FE90037F8DB = {
+						TestTargetID = EB554767199D4FE90037F8DB;
+					};
+				};
+			};
+			buildConfigurationList = EB554763199D4FE90037F8DB /* Build configuration list for PBXProject "Rettiwt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EB55475F199D4FE90037F8DB;
+			productRefGroup = EB554769199D4FE90037F8DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB554767199D4FE90037F8DB /* Rettiwt */,
+				EB554782199D4FE90037F8DB /* RettiwtTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB554766199D4FE90037F8DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB554776199D4FE90037F8DB /* InfoPlist.strings in Resources */,
+				EB55477E199D4FE90037F8DB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB554781199D4FE90037F8DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB55478F199D4FE90037F8DB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB554764199D4FE90037F8DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB5547B3199D508C0037F8DB /* JYLFeedCollectionViewCell.m in Sources */,
+				EB5547B4199D508C0037F8DB /* JYLFeedLayout.m in Sources */,
+				EB5547AC199D50800037F8DB /* JYLFeedCollectionViewController.m in Sources */,
+				EB5547BC199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld in Sources */,
+				EB5547A4199D505E0037F8DB /* JYLErrorViewController.m in Sources */,
+				EB55477C199D4FE90037F8DB /* JYLAppDelegate.m in Sources */,
+				EB5547B9199D50960037F8DB /* JYLRettiwtPost.m in Sources */,
+				EB5547AE199D50800037F8DB /* JYLProfileViewController.m in Sources */,
+				EB5547A5199D505E0037F8DB /* JYLLoginViewController.m in Sources */,
+				EB5547B8199D50960037F8DB /* JYLRettiwtManagedStore.m in Sources */,
+				EB554778199D4FE90037F8DB /* main.m in Sources */,
+				EB5547AD199D50800037F8DB /* JYLMainRettiwtViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB55477F199D4FE90037F8DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB554791199D4FE90037F8DB /* RettiwtTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB554789199D4FE90037F8DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB554767199D4FE90037F8DB /* Rettiwt */;
+			targetProxy = EB554788199D4FE90037F8DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB554774199D4FE90037F8DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB554775199D4FE90037F8DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EB55478D199D4FE90037F8DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB55478E199D4FE90037F8DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB554792199D4FE90037F8DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EB554793199D4FE90037F8DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB554795199D4FE90037F8DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Rettiwt/Rettiwt-Prefix.pch";
+				INFOPLIST_FILE = "Rettiwt/Rettiwt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EB554796199D4FE90037F8DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Rettiwt/Rettiwt-Prefix.pch";
+				INFOPLIST_FILE = "Rettiwt/Rettiwt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EB554798199D4FE90037F8DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rettiwt.app/Rettiwt";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Rettiwt/Rettiwt-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RettiwtTests/RettiwtTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EB554799199D4FE90037F8DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rettiwt.app/Rettiwt";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Rettiwt/Rettiwt-Prefix.pch";
+				INFOPLIST_FILE = "RettiwtTests/RettiwtTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB554763199D4FE90037F8DB /* Build configuration list for PBXProject "Rettiwt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB554792199D4FE90037F8DB /* Debug */,
+				EB554793199D4FE90037F8DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB554794199D4FE90037F8DB /* Build configuration list for PBXNativeTarget "Rettiwt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB554795199D4FE90037F8DB /* Debug */,
+				EB554796199D4FE90037F8DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EB554797199D4FE90037F8DB /* Build configuration list for PBXNativeTarget "RettiwtTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB554798199D4FE90037F8DB /* Debug */,
+				EB554799199D4FE90037F8DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EB5547BA199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EB5547BB199D509F0037F8DB /* JYLRettiwtModel.xcdatamodel */,
+			);
+			currentVersion = EB5547BB199D509F0037F8DB /* JYLRettiwtModel.xcdatamodel */;
+			path = JYLRettiwtModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EB554760199D4FE90037F8DB /* Project object */;
+}

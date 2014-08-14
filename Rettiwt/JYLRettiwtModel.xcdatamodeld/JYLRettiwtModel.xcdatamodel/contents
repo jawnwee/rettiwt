@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6208.6" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="JYLRettiwtPost" representedClassName="JYLRettiwtPost" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="post" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postAuthor" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JYLRettiwtUser" inverseName="tweets" inverseEntity="JYLRettiwtUser" syncable="YES"/>
+    </entity>
+    <entity name="JYLRettiwtUser" syncable="YES">
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tweets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JYLRettiwtPost" inverseName="user" inverseEntity="JYLRettiwtPost" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="JYLRettiwtUser" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="JYLRettiwtPost" positionX="-54" positionY="-9" width="128" height="103"/>
+    </elements>
+</model>
