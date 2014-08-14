@@ -13,6 +13,7 @@
 //  then add the new tweet
 //
 
+#import <Accounts/Accounts.h>
 #import "JYLRettiwtManagedStore.h"
 #import "JYLRettiwtPost.h"
 #import "JYLConstants.h"
@@ -63,6 +64,7 @@
                                                error:&error]) {
             @throw [NSException exceptionWithName:@"failed" reason:[error description] userInfo:nil];
         }
+
         _context = [[NSManagedObjectContext alloc] init];
         _context.persistentStoreCoordinator = coordinator;
 
@@ -77,6 +79,24 @@
     NSString *directory = [documents firstObject];
 
     return [directory stringByAppendingPathComponent:@"store.data"];
+}
+
+- (void)setAccount:(ACAccount *)account {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"JYLRettiwtUser"
+                inManagedObjectContext:self.context];
+    [request setEntity:entity];
+
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"user == %@", [account username]];
+    [request setPredicate:predicate];
+
+    NSError *error;
+    NSArray *array = [self.context executeFetchRequest:request error:&error];
+    if (array != nil) {
+
+    }
 }
 
 /* Fetch in core data for an existing tweet. if it does not exist. Add it, check if we reached
@@ -100,7 +120,7 @@
     if (array != nil) {
         count = [array count];
     }
-    // This could be 0 if the object was previously deleted so we only add if this count is 0
+    // This could be 0 if the object was previously deleted so we only add if tweet count is 0
     if (array == nil || count == 0) {
         if ([self.privateTweets count] == MAX_TWEETS) {
             [self removeTweet];

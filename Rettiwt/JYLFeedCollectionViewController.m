@@ -30,11 +30,12 @@
     self = [super init];
     if (self) {
         _rettAcc = account;
-
         // This must be set to the max_tweets we store in core data so we know to attempt to
         // store MAX_TWEETS number of objects (unless this number is greater than current number
-        // of existing timeline tweets
-        _tweetCount = [NSString stringWithFormat:@"%d", MAX_TWEETS];
+        // of existing timeline tweets. 10 added to this initial set number (still have yet to
+        // figure out why this set number of tweets is not received in the request
+        // (usually under the count I set it to thus triggering array out of bounds)
+        _tweetCount = [NSString stringWithFormat:@"%d", MAX_TWEETS + 10];
         [self refreshTweets];
         self.view.backgroundColor = [UIColor whiteColor];
     }
@@ -123,21 +124,19 @@
                 [df setDateFormat:@"EEE MMM d HH:mm:ss ZZZZ yyyy"];
 
                 // Series of sync'd dispatches to ensure order and completed execution
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    for (int i = 0; i < MAX_TWEETS; i++) {
-                        NSDictionary *tweet = self.dataSource[i];
-                        NSDictionary *user = tweet[@"user"];
-                        NSString *text = tweet[@"text"];
-                        NSString *username = user[@"screen_name"];
-                        NSTimeInterval timeIntveral =
-                                   [[df dateFromString:tweet[@"created_at"]] timeIntervalSince1970];
-                        NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:timeIntveral];
-                        [[JYLRettiwtManagedStore sharedStore] addTweet:username
-                                                                 tweet:text
-                                                               forDate:date];
-                    }
+                for (int i = 0; i < MAX_TWEETS; i++) {
+                    NSDictionary *tweet = self.dataSource[i];
+                    NSDictionary *user = tweet[@"user"];
+                    NSString *text = tweet[@"text"];
+                    NSString *username = user[@"screen_name"];
+                    NSTimeInterval timeIntveral =
+                               [[df dateFromString:tweet[@"created_at"]] timeIntervalSince1970];
+                    NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:timeIntveral];
+                    [[JYLRettiwtManagedStore sharedStore] addTweet:username
+                                                             tweet:text
+                                                           forDate:date];
+                }
 
-                });
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self.collectionView reloadData];
                 });

@@ -29,6 +29,8 @@
 		EB5547B8199D50960037F8DB /* JYLRettiwtManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547B5199D50960037F8DB /* JYLRettiwtManagedStore.m */; };
 		EB5547B9199D50960037F8DB /* JYLRettiwtPost.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */; };
 		EB5547BC199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB5547BA199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld */; };
+		EB854160199D74F900451921 /* JYLRettiwtUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB85415F199D74F900451921 /* JYLRettiwtUser.m */; };
+		FB07DBEBF85143DAAA26BE02 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BA7B4410A54446AA77D3E2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80BA7B4410A54446AA77D3E2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		94A154B6FAC64F7BAC64F3E5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EB554768199D4FE90037F8DB /* Rettiwt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rettiwt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB55476B199D4FE90037F8DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB55476D199D4FE90037F8DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,6 +80,10 @@
 		EB5547B6199D50960037F8DB /* JYLRettiwtPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLRettiwtPost.h; sourceTree = "<group>"; };
 		EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLRettiwtPost.m; sourceTree = "<group>"; };
 		EB5547BB199D509F0037F8DB /* JYLRettiwtModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYLRettiwtModel.xcdatamodel; sourceTree = "<group>"; };
+		EB85415E199D74F900451921 /* JYLRettiwtUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLRettiwtUser.h; sourceTree = "<group>"; };
+		EB85415F199D74F900451921 /* JYLRettiwtUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLRettiwtUser.m; sourceTree = "<group>"; };
+		EBCE88EC199D513F00C19EA3 /* JYLRettiwtManagedStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYLRettiwtManagedStore.h; sourceTree = "<group>"; };
+		EBCE88ED199D514F00C19EA3 /* JYLConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYLConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 				EB55476E199D4FE90037F8DB /* CoreGraphics.framework in Frameworks */,
 				EB554770199D4FE90037F8DB /* UIKit.framework in Frameworks */,
 				EB55476C199D4FE90037F8DB /* Foundation.framework in Frameworks */,
+				FB07DBEBF85143DAAA26BE02 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +118,7 @@
 				EB55478A199D4FE90037F8DB /* RettiwtTests */,
 				EB55476A199D4FE90037F8DB /* Frameworks */,
 				EB554769199D4FE90037F8DB /* Products */,
+				94A154B6FAC64F7BAC64F3E5 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +138,7 @@
 				EB55476D199D4FE90037F8DB /* CoreGraphics.framework */,
 				EB55476F199D4FE90037F8DB /* UIKit.framework */,
 				EB554784199D4FE90037F8DB /* XCTest.framework */,
+				80BA7B4410A54446AA77D3E2 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,6 +149,7 @@
 				EB5547BA199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld */,
 				EB55477A199D4FE90037F8DB /* JYLAppDelegate.h */,
 				EB55477B199D4FE90037F8DB /* JYLAppDelegate.m */,
+				EBCE88ED199D514F00C19EA3 /* JYLConstants.h */,
 				EB55479A199D4FF80037F8DB /* Model */,
 				EB55479B199D4FFD0037F8DB /* View */,
 				EB55479C199D50000037F8DB /* Controller */,
@@ -179,9 +191,12 @@
 		EB55479A199D4FF80037F8DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EBCE88EC199D513F00C19EA3 /* JYLRettiwtManagedStore.h */,
 				EB5547B5199D50960037F8DB /* JYLRettiwtManagedStore.m */,
 				EB5547B6199D50960037F8DB /* JYLRettiwtPost.h */,
 				EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */,
+				EB85415E199D74F900451921 /* JYLRettiwtUser.h */,
+				EB85415F199D74F900451921 /* JYLRettiwtUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -200,18 +215,34 @@
 		EB55479C199D50000037F8DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EBCE88EF199D51B500C19EA3 /* Main */,
+				EBCE88EE199D51A900C19EA3 /* Login */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EBCE88EE199D51A900C19EA3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EB5547A0199D505E0037F8DB /* JYLErrorViewController.h */,
+				EB5547A1199D505E0037F8DB /* JYLErrorViewController.m */,
+				EB5547A2199D505E0037F8DB /* JYLLoginViewController.h */,
+				EB5547A3199D505E0037F8DB /* JYLLoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		EBCE88EF199D51B500C19EA3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				EB5547A6199D50800037F8DB /* JYLFeedCollectionViewController.h */,
 				EB5547A7199D50800037F8DB /* JYLFeedCollectionViewController.m */,
 				EB5547A8199D50800037F8DB /* JYLMainRettiwtViewController.h */,
 				EB5547A9199D50800037F8DB /* JYLMainRettiwtViewController.m */,
 				EB5547AA199D50800037F8DB /* JYLProfileViewController.h */,
 				EB5547AB199D50800037F8DB /* JYLProfileViewController.m */,
-				EB5547A0199D505E0037F8DB /* JYLErrorViewController.h */,
-				EB5547A1199D505E0037F8DB /* JYLErrorViewController.m */,
-				EB5547A2199D505E0037F8DB /* JYLLoginViewController.h */,
-				EB5547A3199D505E0037F8DB /* JYLLoginViewController.m */,
 			);
-			name = Controller;
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB554794199D4FE90037F8DB /* Build configuration list for PBXNativeTarget "Rettiwt" */;
 			buildPhases = (
+				0B7095AE836C4BEA9E12A9E2 /* Check Pods Manifest.lock */,
 				EB554764199D4FE90037F8DB /* Sources */,
 				EB554765199D4FE90037F8DB /* Frameworks */,
 				EB554766199D4FE90037F8DB /* Resources */,
+				238FA200906E4B5699675B50 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,6 +338,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B7095AE836C4BEA9E12A9E2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		238FA200906E4B5699675B50 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB554764199D4FE90037F8DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,6 +387,7 @@
 				EB5547A5199D505E0037F8DB /* JYLLoginViewController.m in Sources */,
 				EB5547B8199D50960037F8DB /* JYLRettiwtManagedStore.m in Sources */,
 				EB554778199D4FE90037F8DB /* main.m in Sources */,
+				EB854160199D74F900451921 /* JYLRettiwtUser.m in Sources */,
 				EB5547AD199D50800037F8DB /* JYLMainRettiwtViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,25 +502,32 @@
 		};
 		EB554795199D4FE90037F8DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94A154B6FAC64F7BAC64F3E5 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rettiwt/Rettiwt-Prefix.pch";
 				INFOPLIST_FILE = "Rettiwt/Rettiwt-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		EB554796199D4FE90037F8DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94A154B6FAC64F7BAC64F3E5 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rettiwt/Rettiwt-Prefix.pch";
 				INFOPLIST_FILE = "Rettiwt/Rettiwt-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -518,6 +592,7 @@
 				EB554796199D4FE90037F8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB554797199D4FE90037F8DB /* Build configuration list for PBXNativeTarget "RettiwtTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +601,7 @@
 				EB554799199D4FE90037F8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

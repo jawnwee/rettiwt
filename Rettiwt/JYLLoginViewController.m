@@ -16,7 +16,10 @@
 #import "JYLFeedCollectionViewController.h"
 #import "JYLRettiwtManagedStore.h"
 
-@interface JYLLoginViewController ()
+@interface JYLLoginViewController () <UIActionSheetDelegate>
+
+@property (nonatomic, strong) NSArray *accounts;
+@property (nonatomic, strong) ACAccount *mainAcc;
 
 @end
 
@@ -26,7 +29,6 @@
     self = [super init];
     if (self) {
         self.view.backgroundColor = [UIColor whiteColor];
-        
     }
     return self;
 }
@@ -45,80 +47,118 @@
 #pragma mark - Twitter User Setup
 // Check if user is permission is still allowed; if so, proceed with login and timelineviewcontroller
 - (void)checkSSO {
-        ACAccountStore *account = [[ACAccountStore alloc] init];
-        ACAccountType *accountType = [account accountTypeWithAccountTypeIdentifier:
-                                      ACAccountTypeIdentifierTwitter];
-
-        [account requestAccessToAccountsWithType:accountType options:nil
+    ACAccountStore *account = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [account accountTypeWithAccountTypeIdentifier:
+                                  ACAccountTypeIdentifierTwitter];
+    [account requestAccessToAccountsWithType:accountType options:nil
                                       completion:^(BOOL granted, NSError *error) {
-            if (granted == YES) {
-                NSArray *accounts = [account accountsWithAccountType:accountType];
-
-                if ([accounts count] > 0) {
-                    // Pick the first twitter account set in settings (most likely main one
-                    // Could implement a view to select from multiple accounts, but for the
-                    // sake of this interview, not done.
-                    ACAccount *mainAcc = [accounts objectAtIndex:0];
-                    [JYLRettiwtManagedStore sharedStore];
-                    JYLFeedCollectionViewController *feed =
-                                  [[JYLFeedCollectionViewController alloc] initWithAccount:mainAcc];
-                    JYLProfileViewController *profile =
-                                  [[JYLProfileViewController alloc] initWithAccount:mainAcc];
-                    JYLMainRettiwtViewController *mainVC =
-                    [[JYLMainRettiwtViewController alloc] initWithAccount:mainAcc 
-                                                                profileVC:profile 
-                                                                   feedVC:feed];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                        self.view.window.rootViewController = mainVC;
-                    });
-                } else {
-                    // Pop up error message
-                    dispatch_sync(dispatch_get_main_queue(), ^{
-                        UIAlertController *alert =
-                        [UIAlertController alertControllerWithTitle:@"Account Unavailable"
-                                                            message:@"Please set a twitter account in your settings"
-                                                     preferredStyle:UIAlertControllerStyleAlert];
-
-                        UIAlertAction *cancelAction =
-                        [UIAlertAction actionWithTitle:@"Ok"
-                                                 style:UIAlertActionStyleCancel 
-                                               handler:^(UIAlertAction *action) {
-
-                                                     JYLErrorViewController *error =
-                                                              [[JYLErrorViewController alloc] init];
-                                                     [self presentViewController:error 
-                                                                        animated:NO 
-                                                                      completion:nil];
-                                                 }];
-                        [alert addAction:cancelAction];
-                        [self presentViewController:alert animated:YES completion:nil];
-                    });
-                }
-            } else {
+        if (granted == YES) {
+            _accounts = [account accountsWithAccountType:accountType];
+            if ([self.accounts count] == 1) {
+                // Pick the first twitter account set in settings if only one account
+                _mainAcc = [self.accounts objectAtIndex:0];
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    UIAlertController *alert =
-                        [UIAlertController alertControllerWithTitle:@"Twitter"
-                                                            message:@"Allow twitter authentication in this app!" 
-                                                     preferredStyle:UIAlertControllerStyleAlert];
+                    [self loadMain];
+                });
 
-                    UIAlertAction *cancelAction =
-                            [UIAlertAction actionWithTitle:@"Ok" 
-                                                     style:UIAlertActionStyleCancel 
-                                                   handler:^(UIAlertAction *action) {
-                                                          JYLErrorViewController *error =
-                                                              [[JYLErrorViewController alloc] init];
-                                                          [self presentViewController:error 
-                                                                             animated:NO 
-                                                                           completion:nil];
-                                                     }];
-                    [alert addAction:cancelAction];
-                    
-                    [self presentViewController:alert animated:YES completion:nil];
+            } else if ([self.accounts count] > 0) {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self displayTwitterAccounts:self.accounts];
+                });
+            } else {
+                // Pop up error message
+                // This controller does not exist in iOS7 so i'll leave this commented out for now
+
+                /* UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Account Unavailable"
+                                                    message:@"Please set a twitter account in your settings"
+                                             preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction =
+                [UIAlertAction actionWithTitle:@"Ok"
+                                         style:UIAlertActionStyleCancel
+                                       handler:^(UIAlertAction *action) {
+
+                                           JYLErrorViewController *error =
+                                           [[JYLErrorViewController alloc] init];
+                                           [self presentViewController:error
+                                                              animated:NO
+                                                            completion:nil];
+                                       }];
+
+                [alert addAction:cancelAction]; */
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    // [self presentViewController:alert animated:YES completion:nil];
+                    JYLErrorViewController *error = [[JYLErrorViewController alloc] init];
+                    [self presentViewController:error
+                                       animated:NO
+                                     completion:nil];
                 });
             }
-        }];
+        } else {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                UIAlertController *alert =
+                    [UIAlertController alertControllerWithTitle:@"Twitter"
+                                                        message:@"Allow twitter authentication in this app!" 
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+
+                UIAlertAction *cancelAction =
+                        [UIAlertAction actionWithTitle:@"Ok" 
+                                                 style:UIAlertActionStyleCancel 
+                                               handler:^(UIAlertAction *action) {
+                                                      JYLErrorViewController *error =
+                                                          [[JYLErrorViewController alloc] init];
+                                                      [self presentViewController:error 
+                                                                         animated:NO 
+                                                                       completion:nil];
+                                                 }];
+                [alert addAction:cancelAction];
+
+                [self presentViewController:alert animated:YES completion:nil];
+            });
+        }
+    }];
 }
+
+/* iOS8 seems to have a bug where action sheets crash app */
+- (void)displayTwitterAccounts:(NSArray *)twitterAccounts {
+    __block UIActionSheet * select = [[UIActionSheet alloc] initWithTitle:@"Select Twitter Account"
+                                                                 delegate:self
+                                                        cancelButtonTitle:nil
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:nil];
+
+    [twitterAccounts enumerateObjectsUsingBlock:^(id twitterAccount, NSUInteger idx, BOOL *stop) {
+        [select addButtonWithTitle:[twitterAccount username]];
+    }];
+
+    [select showInView:self.view];
+}
+
+#pragma mark - Setup Main
+- (void)loadMain {
+    // Initialize stores and controllers and chcange rootviewcontroller to mainvc
+    [[JYLRettiwtManagedStore sharedStore] setAccount:self.mainAcc];
+    
+    JYLFeedCollectionViewController *feed =
+    [[JYLFeedCollectionViewController alloc] initWithAccount:self.mainAcc];
+    JYLProfileViewController *profile =
+    [[JYLProfileViewController alloc] initWithAccount:self.mainAcc];
+    JYLMainRettiwtViewController *mainVC =
+    [[JYLMainRettiwtViewController alloc] initWithAccount:self.mainAcc
+                                                profileVC:profile
+                                                   feedVC:feed];
+    self.view.window.rootViewController = mainVC;
+}
+
+#pragma mark - ActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        self.mainAcc = [self.accounts objectAtIndex:buttonIndex];
+        [self loadMain];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
