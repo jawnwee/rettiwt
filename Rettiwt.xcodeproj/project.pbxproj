@@ -29,7 +29,7 @@
 		EB5547B8199D50960037F8DB /* JYLRettiwtManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547B5199D50960037F8DB /* JYLRettiwtManagedStore.m */; };
 		EB5547B9199D50960037F8DB /* JYLRettiwtPost.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */; };
 		EB5547BC199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB5547BA199D509F0037F8DB /* JYLRettiwtModel.xcdatamodeld */; };
-		EB854160199D74F900451921 /* JYLRettiwtUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB85415F199D74F900451921 /* JYLRettiwtUser.m */; };
+		EB854163199D922400451921 /* JYLRettiwtUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB854162199D922400451921 /* JYLRettiwtUser.m */; };
 		FB07DBEBF85143DAAA26BE02 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BA7B4410A54446AA77D3E2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -80,8 +80,8 @@
 		EB5547B6199D50960037F8DB /* JYLRettiwtPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLRettiwtPost.h; sourceTree = "<group>"; };
 		EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLRettiwtPost.m; sourceTree = "<group>"; };
 		EB5547BB199D509F0037F8DB /* JYLRettiwtModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYLRettiwtModel.xcdatamodel; sourceTree = "<group>"; };
-		EB85415E199D74F900451921 /* JYLRettiwtUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLRettiwtUser.h; sourceTree = "<group>"; };
-		EB85415F199D74F900451921 /* JYLRettiwtUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLRettiwtUser.m; sourceTree = "<group>"; };
+		EB854161199D922400451921 /* JYLRettiwtUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLRettiwtUser.h; sourceTree = "<group>"; };
+		EB854162199D922400451921 /* JYLRettiwtUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLRettiwtUser.m; sourceTree = "<group>"; };
 		EBCE88EC199D513F00C19EA3 /* JYLRettiwtManagedStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYLRettiwtManagedStore.h; sourceTree = "<group>"; };
 		EBCE88ED199D514F00C19EA3 /* JYLConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYLConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,8 +195,8 @@
 				EB5547B5199D50960037F8DB /* JYLRettiwtManagedStore.m */,
 				EB5547B6199D50960037F8DB /* JYLRettiwtPost.h */,
 				EB5547B7199D50960037F8DB /* JYLRettiwtPost.m */,
-				EB85415E199D74F900451921 /* JYLRettiwtUser.h */,
-				EB85415F199D74F900451921 /* JYLRettiwtUser.m */,
+				EB854161199D922400451921 /* JYLRettiwtUser.h */,
+				EB854162199D922400451921 /* JYLRettiwtUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -387,7 +387,7 @@
 				EB5547A5199D505E0037F8DB /* JYLLoginViewController.m in Sources */,
 				EB5547B8199D50960037F8DB /* JYLRettiwtManagedStore.m in Sources */,
 				EB554778199D4FE90037F8DB /* main.m in Sources */,
-				EB854160199D74F900451921 /* JYLRettiwtUser.m in Sources */,
+				EB854163199D922400451921 /* JYLRettiwtUser.m in Sources */,
 				EB5547AD199D50800037F8DB /* JYLMainRettiwtViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

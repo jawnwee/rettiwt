@@ -8,10 +8,10 @@
     </entity>
     <entity name="JYLRettiwtUser" representedClassName="JYLRettiwtUser" syncable="YES">
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="tweets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JYLRettiwtPost" inverseName="user" inverseEntity="JYLRettiwtPost" syncable="YES"/>
+        <relationship name="tweets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="JYLRettiwtPost" inverseName="user" inverseEntity="JYLRettiwtPost" syncable="YES"/>
     </entity>
     <elements>
         <element name="JYLRettiwtPost" positionX="-54" positionY="-9" width="128" height="103"/>
-        <element name="JYLRettiwtUser" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="JYLRettiwtUser" positionX="-63" positionY="-18" width="128" height="73"/>
     </elements>
 </model>

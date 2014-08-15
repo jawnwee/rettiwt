@@ -17,5 +17,7 @@
 - (NSArray *)storedTweets;
 - (void)addTweet:(NSString *)handle tweet:(NSString *)text forDate:(NSDate *)date;
 - (void)setAccount:(ACAccount *)account;
+- (void)saveContextWithTweets;
+
 
 @end

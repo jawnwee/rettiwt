@@ -16,6 +16,7 @@
 #import <Accounts/Accounts.h>
 #import "JYLRettiwtManagedStore.h"
 #import "JYLRettiwtPost.h"
+#import "JYLRettiwtUser.h"
 #import "JYLConstants.h"
 
 
@@ -25,6 +26,7 @@
 @property (nonatomic, strong) NSMutableArray *privateTweets;
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic, strong) NSManagedObjectModel *model;
+@property (nonatomic, strong) JYLRettiwtUser *user;
 
 @end
 
@@ -67,8 +69,6 @@
 
         _context = [[NSManagedObjectContext alloc] init];
         _context.persistentStoreCoordinator = coordinator;
-
-        [self loadData];
     }
     return self;
 }
@@ -88,20 +88,32 @@
                 inManagedObjectContext:self.context];
     [request setEntity:entity];
 
-    NSPredicate *predicate =
-    [NSPredicate predicateWithFormat:@"user == %@", [account username]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"username == %@", [account username]];
     [request setPredicate:predicate];
 
     NSError *error;
     NSArray *array = [self.context executeFetchRequest:request error:&error];
     if (array != nil) {
-
+        NSInteger count = [array count];
+        if (count != 0) {
+            _user = [array objectAtIndex:0];
+        } else {
+            JYLRettiwtUser *user = [NSEntityDescription insertNewObjectForEntityForName:@"JYLRettiwtUser"
+                                                                 inManagedObjectContext:self.context];
+            user.username = [account username];
+            self.user = user;
+            NSError *error = nil;
+            [self.context save:&error];
+        }
     }
+
+    // Load tweets after loading account
+    [self loadData];
 }
 
 /* Fetch in core data for an existing tweet. if it does not exist. Add it, check if we reached
  max capacity. If so, remove the last existing object in our private entries and delete from
- core data as well
+ core data as well.
  */
 - (void)addTweet:(NSString *)handle tweet:(NSString *)text forDate:(NSDate *)date {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -110,8 +122,10 @@
                 inManagedObjectContext:self.context];
     [request setEntity:entity];
 
-    NSPredicate *predicate =
-    [NSPredicate predicateWithFormat:@"post == %@", text];
+    NSPredicate *postPredicate = [NSPredicate predicateWithFormat:@"post == %@", text];
+    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.user];
+    NSCompoundPredicate *predicate =
+                [NSCompoundPredicate andPredicateWithSubpredicates:@[postPredicate, userPredicate]];
     [request setPredicate:predicate];
 
     NSError *error;
@@ -130,11 +144,16 @@
         rett.date = date;;
         rett.postAuthor = handle;
         rett.post = text;
+        rett.user = self.user;
 
         [self.privateTweets insertObject:rett atIndex:0];
-        NSError *error = nil;
-        [self.context save:&error];
     }
+}
+
+- (void)saveContextWithTweets {
+    self.user.tweets = [NSSet setWithArray:self.privateTweets];
+    NSError *error = nil;
+    [self.context save:&error];
 }
 
 - (void)removeTweet {
@@ -145,22 +164,7 @@
 
 - (void)loadData {
     if (!self.privateTweets) {
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"JYLRettiwtPost"
-                                             inManagedObjectContext:self.context];
-        request.entity = entity;
-        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" 
-                                                               ascending:NO];
-        request.sortDescriptors = @[sort];
-
-        NSError *error;
-        NSArray *results = [self.context executeFetchRequest:request error:&error];
-
-        if (!results) {
-            [NSException raise:@"fetch fail" format:@"somethings wrong"];
-        }
-
-        self.privateTweets = [[NSMutableArray alloc] initWithArray:results];
+        self.privateTweets = [[NSMutableArray alloc] initWithArray:self.user.tweets.allObjects];
     }
 }
 

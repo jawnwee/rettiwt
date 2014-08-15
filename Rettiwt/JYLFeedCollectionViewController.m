@@ -55,7 +55,7 @@
     // this is just in case a user was initially connected, but suddenly disconnects and reconnects
     // again later.
     if ([self connected]) {
-        [NSTimer scheduledTimerWithTimeInterval:20.0
+        [NSTimer scheduledTimerWithTimeInterval:10.0
                                          target:self
                                        selector:@selector(pollingTweets)
                                        userInfo:nil
@@ -136,6 +136,7 @@
                                                              tweet:text
                                                            forDate:date];
                 }
+                [[JYLRettiwtManagedStore sharedStore] saveContextWithTweets];
 
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self.collectionView reloadData];

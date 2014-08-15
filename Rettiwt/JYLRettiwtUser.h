@@ -14,6 +14,14 @@
 @interface JYLRettiwtUser : NSManagedObject
 
 @property (nonatomic, retain) NSString * username;
-@property (nonatomic, retain) JYLRettiwtPost *tweets;
+@property (nonatomic, retain) NSSet *tweets;
+@end
+
+@interface JYLRettiwtUser (CoreDataGeneratedAccessors)
+
+- (void)addTweetsObject:(JYLRettiwtPost *)value;
+- (void)removeTweetsObject:(JYLRettiwtPost *)value;
+- (void)addTweets:(NSSet *)values;
+- (void)removeTweets:(NSSet *)values;
 
 @end
